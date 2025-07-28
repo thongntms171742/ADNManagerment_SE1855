@@ -1,0 +1,147 @@
+<Window x:Class="ADNManagermentWPF.BookingDetailsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ADNManagermentWPF"
+        mc:Ignorable="d"
+        Title="Booking Details" Height="600" Width="550"
+        WindowStartupLocation="CenterScreen">
+    <Border Background="#f8f9fa" Padding="15">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel>
+                <TextBlock Text="Booking Details" FontSize="20" FontWeight="Bold" Margin="0,0,0,15"/>
+                
+                <!-- Booking Information -->
+                <Border BorderBrush="#dee2e6" BorderThickness="1" Background="White" Margin="0,0,0,15" Padding="15">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Booking ID:" FontWeight="SemiBold" Margin="0,5"/>
+                        <TextBlock Grid.Row="0" Grid.Column="1" x:Name="txtBookingId" Text="" Margin="0,5"/>
+                        
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Service:" FontWeight="SemiBold" Margin="0,5"/>
+                        <TextBlock Grid.Row="1" Grid.Column="1" x:Name="txtService" Text="" Margin="0,5"/>
+                        
+                        <TextBlock Grid.Row="2" Grid.Column="0" Text="Customer:" FontWeight="SemiBold" Margin="0,5"/>
+                        <TextBlock Grid.Row="2" Grid.Column="1" x:Name="txtCustomer" Text="" Margin="0,5"/>
+                        
+                        <TextBlock Grid.Row="3" Grid.Column="0" Text="Booking Date:" FontWeight="SemiBold" Margin="0,5"/>
+                        <TextBlock Grid.Row="3" Grid.Column="1" x:Name="txtBookingDate" Text="" Margin="0,5"/>
+                        
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="Status:" FontWeight="SemiBold" Margin="0,5"/>
+                        <TextBlock Grid.Row="4" Grid.Column="1" x:Name="txtStatus" Text="" Margin="0,5"/>
+                        
+                        <TextBlock Grid.Row="5" Grid.Column="0" Text="Collection Method:" FontWeight="SemiBold" Margin="0,5"/>
+                        <TextBlock Grid.Row="5" Grid.Column="1" x:Name="txtCollectionMethod" Text="" Margin="0,5"/>
+                        
+                        <TextBlock Grid.Row="6" Grid.Column="0" Text="Address:" FontWeight="SemiBold" Margin="0,5"/>
+                        <TextBlock Grid.Row="6" Grid.Column="1" x:Name="txtAddress" Text="" TextWrapping="Wrap" Margin="0,5"/>
+                        
+                        <TextBlock Grid.Row="7" Grid.Column="0" Text="Created Date:" FontWeight="SemiBold" Margin="0,5"/>
+                        <TextBlock Grid.Row="7" Grid.Column="1" x:Name="txtCreatedDate" Text="" Margin="0,5"/>
+                    </Grid>
+                </Border>
+                
+                <!-- Sample Information -->
+                <Border x:Name="samplePanel" BorderBrush="#dee2e6" BorderThickness="1" Background="White" Margin="0,0,0,15" Padding="15">
+                    <StackPanel>
+                        <TextBlock Text="Sample Information" FontWeight="SemiBold" Margin="0,0,0,10"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Sample ID:" FontWeight="SemiBold" Margin="0,5"/>
+                            <TextBlock Grid.Row="0" Grid.Column="1" x:Name="txtSampleId" Text="" Margin="0,5"/>
+                            
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Sample Type:" FontWeight="SemiBold" Margin="0,5"/>
+                            <TextBlock Grid.Row="1" Grid.Column="1" x:Name="txtSampleType" Text="" Margin="0,5"/>
+                            
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Collection Date:" FontWeight="SemiBold" Margin="0,5"/>
+                            <TextBlock Grid.Row="2" Grid.Column="1" x:Name="txtCollectionDate" Text="" Margin="0,5"/>
+                            
+                            <TextBlock Grid.Row="3" Grid.Column="0" Text="Received Date:" FontWeight="SemiBold" Margin="0,5"/>
+                            <TextBlock Grid.Row="3" Grid.Column="1" x:Name="txtReceivedDate" Text="" Margin="0,5"/>
+                            
+                            <TextBlock Grid.Row="4" Grid.Column="0" Text="Storage Location:" FontWeight="SemiBold" Margin="0,5"/>
+                            <TextBlock Grid.Row="4" Grid.Column="1" x:Name="txtStorageLocation" Text="" Margin="0,5"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Result Information -->
+                <Border x:Name="resultPanel" BorderBrush="#dee2e6" BorderThickness="1" Background="White" Margin="0,0,0,15" Padding="15">
+                    <StackPanel>
+                        <TextBlock Text="Result Information" FontWeight="SemiBold" Margin="0,0,0,10"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="Result ID:" FontWeight="SemiBold" Margin="0,5"/>
+                            <TextBlock Grid.Row="0" Grid.Column="1" x:Name="txtResultId" Text="" Margin="0,5"/>
+                            
+                            <TextBlock Grid.Row="1" Grid.Column="0" Text="Result Details:" FontWeight="SemiBold" Margin="0,5"/>
+                            <TextBlock Grid.Row="1" Grid.Column="1" x:Name="txtResultDetails" Text="" TextWrapping="Wrap" Margin="0,5"/>
+                            
+                            <TextBlock Grid.Row="2" Grid.Column="0" Text="Result Date:" FontWeight="SemiBold" Margin="0,5"/>
+                            <TextBlock Grid.Row="2" Grid.Column="1" x:Name="txtResultDate" Text="" Margin="0,5"/>
+                            
+                            <TextBlock Grid.Row="3" Grid.Column="0" Text="Staff:" FontWeight="SemiBold" Margin="0,5"/>
+                            <TextBlock Grid.Row="3" Grid.Column="1" x:Name="txtStaff" Text="" Margin="0,5"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+                
+                <!-- Update Status (Staff/Admin only) -->
+                <Border x:Name="updateStatusPanel" BorderBrush="#dee2e6" BorderThickness="1" Background="White" Margin="0,0,0,15" Padding="15">
+                    <StackPanel>
+                        <TextBlock Text="Update Status" FontWeight="SemiBold" Margin="0,0,0,10"/>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            
+                            <TextBlock Grid.Column="0" Text="New Status:" FontWeight="SemiBold" VerticalAlignment="Center"/>
+                            <ComboBox Grid.Column="1" x:Name="cboStatus" Margin="0,5" Padding="5" Height="30"/>
+                            <Button Grid.Column="2" x:Name="btnUpdateStatus" Content="Update" Margin="10,0,0,0" Padding="15,5" Background="#3498db" Foreground="White" Click="btnUpdateStatus_Click"/>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+                
+                <Button x:Name="btnClose" Content="Close" Width="100" HorizontalAlignment="Right" Margin="0,10,0,0" Padding="10,5" Background="#6c757d" Foreground="White" Click="btnClose_Click"/>
+            </StackPanel>
+        </ScrollViewer>
+    </Border>
+</Window> 

@@ -1,0 +1,292 @@
+<Page x:Class="ADNManagermentWPF.HomePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ADNManagermentWPF"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1200"
+      Title="HomePage">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+            <!-- Hero Section -->
+            <Grid Height="600">
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#667eea" Offset="0"/>
+                        <GradientStop Color="#764ba2" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                
+                <!-- Background Pattern -->
+                <Canvas>
+                    <Ellipse Width="200" Height="200" Fill="White" Opacity="0.1" Canvas.Left="50" Canvas.Top="50"/>
+                    <Ellipse Width="150" Height="150" Fill="White" Opacity="0.1" Canvas.Right="100" Canvas.Top="100"/>
+                    <Ellipse Width="100" Height="100" Fill="White" Opacity="0.1" Canvas.Left="300" Canvas.Bottom="50"/>
+                </Canvas>
+                
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" TextBlock.TextAlignment="Center">
+                    <TextBlock Text="🧬" FontSize="64" Margin="0,0,0,20"/>
+                    <TextBlock Text="DNA MANAGERMENT SYSTEM" FontSize="48" FontWeight="Bold" Foreground="White" Margin="0,0,0,20"/>
+                    <TextBlock Text="Professional genetic analysis and family heritage discovery with cutting-edge technology" FontSize="22" Foreground="White" Margin="0,0,0,40" MaxWidth="700"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Content="🔬 Book Now" Width="200" Height="55" Background="#28a745" Foreground="White" FontWeight="Bold" FontSize="18" Margin="0,0,20,0"/>
+                        <Button Content="📖 Learn More" Width="200" Height="55" Background="Transparent" Foreground="White" BorderBrush="White" BorderThickness="2" FontWeight="Bold" FontSize="18"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+
+            <!-- Services Section -->
+            <StackPanel Background="White" Margin="0,-50,0,0">
+                <TextBlock Text="Our Premium Services" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,80,0,50" Foreground="#2c3e50"/>
+                
+                <Grid Margin="50,0,50,80">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!-- Service 1 -->
+                    <Border Grid.Column="0" Background="White" Margin="15" Padding="30" CornerRadius="20" BorderBrush="#e9ecef" BorderThickness="1">
+                        <StackPanel>
+                            <Ellipse Width="100" Height="100" Fill="#667eea" Margin="0,0,0,25">
+                                <Ellipse.Effect>
+                                    <DropShadowEffect Color="#667eea" BlurRadius="20" ShadowDepth="5"/>
+                                </Ellipse.Effect>
+                            </Ellipse>
+                            <TextBlock Text="🧬 Paternity Testing" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,15" Foreground="#2c3e50"/>
+                            <TextBlock Text="Accurate DNA testing for establishing biological relationships with 99.9% accuracy using advanced genetic analysis technology." TextWrapping="Wrap" TextAlignment="Center" Foreground="#6c757d" LineHeight="24"/>
+                        </StackPanel>
+                    </Border>
+                    
+                    <!-- Service 2 -->
+                    <Border Grid.Column="1" Background="White" Margin="15" Padding="30" CornerRadius="20" BorderBrush="#e9ecef" BorderThickness="1">
+                        <StackPanel>
+                            <Ellipse Width="100" Height="100" Fill="#28a745" Margin="0,0,0,25">
+                                <Ellipse.Effect>
+                                    <DropShadowEffect Color="#28a745" BlurRadius="20" ShadowDepth="5"/>
+                                </Ellipse.Effect>
+                            </Ellipse>
+                            <TextBlock Text="🏠 Ancestry Testing" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,15" Foreground="#2c3e50"/>
+                            <TextBlock Text="Discover your genetic heritage and trace your family lineage through comprehensive DNA analysis and genealogical research." TextWrapping="Wrap" TextAlignment="Center" Foreground="#6c757d" LineHeight="24"/>
+                        </StackPanel>
+                    </Border>
+                    
+                    <!-- Service 3 -->
+                    <Border Grid.Column="2" Background="White" Margin="15" Padding="30" CornerRadius="20" BorderBrush="#e9ecef" BorderThickness="1">
+                        <StackPanel>
+                            <Ellipse Width="100" Height="100" Fill="#ffc107" Margin="0,0,0,25">
+                                <Ellipse.Effect>
+                                    <DropShadowEffect Color="#ffc107" BlurRadius="20" ShadowDepth="5"/>
+                                </Ellipse.Effect>
+                            </Ellipse>
+                            <TextBlock Text="🔬 Health Screening" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,15" Foreground="#2c3e50"/>
+                            <TextBlock Text="Comprehensive genetic health screening to identify potential health risks and provide personalized wellness recommendations." TextWrapping="Wrap" TextAlignment="Center" Foreground="#6c757d" LineHeight="24"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </StackPanel>
+
+            <!-- Statistics Section -->
+            <Grid Margin="0,0,0,80">
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#f8f9fa" Offset="0"/>
+                        <GradientStop Color="#e9ecef" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                
+                <StackPanel Margin="50,80,50,80">
+                    <TextBlock Text="Why Choose Us?" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,60" Foreground="#2c3e50"/>
+                    
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        
+                        <!-- Stat 1 -->
+                        <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                            <TextBlock Text="🔬" FontSize="48" HorizontalAlignment="Center" Margin="0,0,0,15"/>
+                            <TextBlock Text="99.9%" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#667eea" Margin="0,0,0,10"/>
+                            <TextBlock Text="Accuracy Rate" FontSize="16" HorizontalAlignment="Center" Foreground="#6c757d"/>
+                        </StackPanel>
+                        
+                        <!-- Stat 2 -->
+                        <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                            <TextBlock Text="⚡" FontSize="48" HorizontalAlignment="Center" Margin="0,0,0,15"/>
+                            <TextBlock Text="24-48h" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#28a745" Margin="0,0,0,10"/>
+                            <TextBlock Text="Fast Results" FontSize="16" HorizontalAlignment="Center" Foreground="#6c757d"/>
+                        </StackPanel>
+                        
+                        <!-- Stat 3 -->
+                        <StackPanel Grid.Column="2" HorizontalAlignment="Center">
+                            <TextBlock Text="🛡️" FontSize="48" HorizontalAlignment="Center" Margin="0,0,0,15"/>
+                            <TextBlock Text="100%" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#ffc107" Margin="0,0,0,10"/>
+                            <TextBlock Text="Confidential" FontSize="16" HorizontalAlignment="Center" Foreground="#6c757d"/>
+                        </StackPanel>
+                        
+                        <!-- Stat 4 -->
+                        <StackPanel Grid.Column="3" HorizontalAlignment="Center">
+                            <TextBlock Text="👥" FontSize="48" HorizontalAlignment="Center" Margin="0,0,0,15"/>
+                            <TextBlock Text="10K+" FontSize="36" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#e74c3c" Margin="0,0,0,10"/>
+                            <TextBlock Text="Happy Clients" FontSize="16" HorizontalAlignment="Center" Foreground="#6c757d"/>
+                        </StackPanel>
+                    </Grid>
+                </StackPanel>
+            </Grid>
+
+            <!-- Process Section -->
+            <StackPanel Background="White" Margin="0,0,0,80">
+                <TextBlock Text="How It Works" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,80,0,60" Foreground="#2c3e50"/>
+                
+                <Grid Margin="50,0,50,80">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!-- Step 1 -->
+                    <StackPanel Grid.Column="0" HorizontalAlignment="Center">
+                        <Ellipse Width="80" Height="80" Fill="#667eea" Margin="0,0,0,20">
+                            <Ellipse.Effect>
+                                <DropShadowEffect Color="#667eea" BlurRadius="15" ShadowDepth="3"/>
+                            </Ellipse.Effect>
+                        </Ellipse>
+                        <TextBlock Text="1" FontSize="24" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-60,0,0"/>
+                        <TextBlock Text="Book Online" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="#2c3e50"/>
+                        <TextBlock Text="Choose your service and schedule an appointment through our secure online booking system." TextWrapping="Wrap" TextAlignment="Center" Foreground="#6c757d"/>
+                    </StackPanel>
+                    
+                    <!-- Arrow 1 -->
+                    <TextBlock Grid.Column="1" Text="→" FontSize="36" FontWeight="Bold" VerticalAlignment="Center" Margin="20,0" Foreground="#6c757d"/>
+                    
+                    <!-- Step 2 -->
+                    <StackPanel Grid.Column="2" HorizontalAlignment="Center">
+                        <Ellipse Width="80" Height="80" Fill="#28a745" Margin="0,0,0,20">
+                            <Ellipse.Effect>
+                                <DropShadowEffect Color="#28a745" BlurRadius="15" ShadowDepth="3"/>
+                            </Ellipse.Effect>
+                        </Ellipse>
+                        <TextBlock Text="2" FontSize="24" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-60,0,0"/>
+                        <TextBlock Text="Sample Collection" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="#2c3e50"/>
+                        <TextBlock Text="Visit our facility or use our home collection kit for convenient sample collection." TextWrapping="Wrap" TextAlignment="Center" Foreground="#6c757d"/>
+                    </StackPanel>
+                    
+                    <!-- Arrow 2 -->
+                    <TextBlock Grid.Column="3" Text="→" FontSize="36" FontWeight="Bold" VerticalAlignment="Center" Margin="20,0" Foreground="#6c757d"/>
+                    
+                    <!-- Step 3 -->
+                    <StackPanel Grid.Column="4" HorizontalAlignment="Center">
+                        <Ellipse Width="80" Height="80" Fill="#ffc107" Margin="0,0,0,20">
+                            <Ellipse.Effect>
+                                <DropShadowEffect Color="#ffc107" BlurRadius="15" ShadowDepth="3"/>
+                            </Ellipse.Effect>
+                        </Ellipse>
+                        <TextBlock Text="3" FontSize="24" FontWeight="Bold" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-60,0,0"/>
+                        <TextBlock Text="Get Results" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,0,0,10" Foreground="#2c3e50"/>
+                        <TextBlock Text="Receive your comprehensive DNA analysis results within 24-48 hours via secure portal." TextWrapping="Wrap" TextAlignment="Center" Foreground="#6c757d"/>
+                    </StackPanel>
+                </Grid>
+            </StackPanel>
+
+            <!-- Testimonials Section -->
+            <StackPanel Background="#f8f9fa" Margin="0,0,0,80">
+                <TextBlock Text="What Our Clients Say" FontSize="40" FontWeight="Bold" HorizontalAlignment="Center" Margin="0,80,0,60" Foreground="#2c3e50"/>
+                
+                <Grid Margin="50,0,50,80">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <!-- Testimonial 1 -->
+                    <Border Grid.Column="0" Background="White" Margin="15" Padding="30" CornerRadius="20" BorderBrush="#e9ecef" BorderThickness="1">
+                        <StackPanel>
+                            <TextBlock Text="⭐⭐⭐⭐⭐" FontSize="20" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                            <TextBlock Text="'The DNA testing process was incredibly smooth and professional. The results were delivered quickly and the staff was very helpful throughout.'" TextWrapping="Wrap" TextAlignment="Center" FontStyle="Italic" Foreground="#6c757d" Margin="0,0,0,20"/>
+                            <TextBlock Text="- Sarah Johnson" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#2c3e50"/>
+                        </StackPanel>
+                    </Border>
+                    
+                    <!-- Testimonial 2 -->
+                    <Border Grid.Column="1" Background="White" Margin="15" Padding="30" CornerRadius="20" BorderBrush="#e9ecef" BorderThickness="1">
+                        <StackPanel>
+                            <TextBlock Text="⭐⭐⭐⭐⭐" FontSize="20" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                            <TextBlock Text="'I was amazed by the accuracy and detail of the ancestry results. The team made the entire process simple and stress-free.'" TextWrapping="Wrap" TextAlignment="Center" FontStyle="Italic" Foreground="#6c757d" Margin="0,0,0,20"/>
+                            <TextBlock Text="- Michael Chen" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#2c3e50"/>
+                        </StackPanel>
+                    </Border>
+                    
+                    <!-- Testimonial 3 -->
+                    <Border Grid.Column="2" Background="White" Margin="15" Padding="30" CornerRadius="20" BorderBrush="#e9ecef" BorderThickness="1">
+                        <StackPanel>
+                            <TextBlock Text="⭐⭐⭐⭐⭐" FontSize="20" HorizontalAlignment="Center" Margin="0,0,0,20"/>
+                            <TextBlock Text="'Professional service with excellent customer support. The health screening provided valuable insights for my family.'" TextWrapping="Wrap" TextAlignment="Center" FontStyle="Italic" Foreground="#6c757d" Margin="0,0,0,20"/>
+                            <TextBlock Text="- Emily Rodriguez" FontWeight="Bold" HorizontalAlignment="Center" Foreground="#2c3e50"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </StackPanel>
+
+            <!-- CTA Section -->
+            <Grid Margin="0,0,0,80">
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                        <GradientStop Color="#667eea" Offset="0"/>
+                        <GradientStop Color="#764ba2" Offset="1"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                
+                <StackPanel Margin="50,80,50,80" TextBlock.TextAlignment="Center">
+                    <TextBlock Text="Ready to Discover Your DNA?" FontSize="36" FontWeight="Bold" Foreground="White" Margin="0,0,0,20"/>
+                    <TextBlock Text="Join thousands of satisfied customers who have discovered their genetic heritage with our advanced DNA testing services." FontSize="18" Foreground="White" Margin="0,0,0,40" MaxWidth="600"/>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Content="🚀 Get Started Today" Width="250" Height="60" Background="#28a745" Foreground="White" FontWeight="Bold" FontSize="18" Margin="0,0,20,0"/>
+                        <Button Content="📞 Contact Us" Width="200" Height="60" Background="Transparent" Foreground="White" BorderBrush="White" BorderThickness="2" FontWeight="Bold" FontSize="18"/>
+                    </StackPanel>
+                </StackPanel>
+            </Grid>
+
+            <!-- Footer -->
+            <Border Background="#2c3e50" Padding="50,40,50,40">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <StackPanel Grid.Column="0">
+                        <TextBlock Text="🧬 ADN Testing Services" FontSize="24" FontWeight="Bold" Foreground="White" Margin="0,0,0,20"/>
+                        <TextBlock Text="Professional DNA testing and genetic analysis services with cutting-edge technology and expert support." Foreground="#bdc3c7" TextWrapping="Wrap"/>
+                    </StackPanel>
+                    
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Center">
+                        <TextBlock Text="Quick Links" FontSize="18" FontWeight="Bold" Foreground="White" Margin="0,0,0,20"/>
+                        <TextBlock Text="Services" Foreground="#bdc3c7" Margin="0,0,0,10"/>
+                        <TextBlock Text="About Us" Foreground="#bdc3c7" Margin="0,0,0,10"/>
+                        <TextBlock Text="Contact" Foreground="#bdc3c7" Margin="0,0,0,10"/>
+                        <TextBlock Text="Privacy Policy" Foreground="#bdc3c7"/>
+                    </StackPanel>
+                    
+                    <StackPanel Grid.Column="2" HorizontalAlignment="Right">
+                        <TextBlock Text="Contact Info" FontSize="18" FontWeight="Bold" Foreground="White" Margin="0,0,0,20"/>
+                        <TextBlock Text="📧 info@adntesting.com" Foreground="#bdc3c7" Margin="0,0,0,10"/>
+                        <TextBlock Text="📞 +1 (555) 123-4567" Foreground="#bdc3c7" Margin="0,0,0,10"/>
+                        <TextBlock Text="📍 123 DNA Street, Genetic City" Foreground="#bdc3c7" Margin="0,0,0,10"/>
+                        <TextBlock Text="🕒 Mon-Fri: 9AM-6PM" Foreground="#bdc3c7"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </StackPanel>
+    </ScrollViewer>
+</Page> 
