@@ -129,7 +129,10 @@ namespace ADNManagermentWPF
         {
             monthlyChart.Children.Clear();
             
-            // Simple bar chart
+            // Set modern dark background
+            monthlyChart.Background = new SolidColorBrush(Color.FromRgb(15, 15, 15));
+            
+            // Get monthly booking data
             var monthlyData = bookings
                 .GroupBy(b => b.CreatedDate.Month)
                 .Select(g => new { Month = g.Key, Count = g.Count() })
@@ -139,41 +142,227 @@ namespace ADNManagermentWPF
             if (monthlyData.Count == 0) return;
 
             double maxCount = monthlyData.Max(x => x.Count);
-            double chartWidth = monthlyChart.ActualWidth > 0 ? monthlyChart.ActualWidth : 400; // Default width
-            double barWidth = chartWidth / monthlyData.Count;
-            double maxHeight = 150;
+            double chartWidth = monthlyChart.ActualWidth > 0 ? monthlyChart.ActualWidth : 400;
+            double chartHeight = 180;
+            double barWidth = (chartWidth - 80) / monthlyData.Count;
+            double maxBarHeight = chartHeight - 100;
 
+            // Draw background grid
+            for (int i = 0; i <= 4; i++)
+            {
+                double yPosition = 30 + (i * maxBarHeight / 4);
+                var gridLine = new Line
+                {
+                    X1 = 60,
+                    Y1 = yPosition,
+                    X2 = chartWidth - 20,
+                    Y2 = yPosition,
+                    Stroke = new SolidColorBrush(Color.FromRgb(40, 40, 40)),
+                    StrokeThickness = 0.5
+                };
+                monthlyChart.Children.Add(gridLine);
+            }
+
+            // Draw Y-axis with gradient
+            var yAxis = new Line
+            {
+                X1 = 60,
+                Y1 = 30,
+                X2 = 60,
+                Y2 = chartHeight - 70,
+                Stroke = new LinearGradientBrush
+                {
+                    StartPoint = new Point(0, 0),
+                    EndPoint = new Point(0, 1),
+                    GradientStops = new GradientStopCollection
+                    {
+                        new GradientStop(Color.FromRgb(0, 255, 255), 0),
+                        new GradientStop(Color.FromRgb(0, 150, 255), 1)
+                    }
+                },
+                StrokeThickness = 2
+            };
+            monthlyChart.Children.Add(yAxis);
+
+            // Draw X-axis with gradient
+            var xAxis = new Line
+            {
+                X1 = 60,
+                Y1 = chartHeight - 70,
+                X2 = chartWidth - 20,
+                Y2 = chartHeight - 70,
+                Stroke = new LinearGradientBrush
+                {
+                    StartPoint = new Point(0, 0),
+                    EndPoint = new Point(1, 0),
+                    GradientStops = new GradientStopCollection
+                    {
+                        new GradientStop(Color.FromRgb(0, 255, 255), 0),
+                        new GradientStop(Color.FromRgb(0, 150, 255), 1)
+                    }
+                },
+                StrokeThickness = 2
+            };
+            monthlyChart.Children.Add(xAxis);
+
+            // Y-axis labels with modern styling
+            for (int i = 0; i <= 4; i++)
+            {
+                double yValue = (maxCount / 4) * i;
+                double yPosition = chartHeight - 70 - (i * maxBarHeight / 4);
+                
+                var yLabel = new TextBlock
+                {
+                    Text = yValue.ToString("0"),
+                    FontSize = 10,
+                    FontWeight = FontWeights.Bold,
+                    Foreground = new SolidColorBrush(Color.FromRgb(200, 200, 200)),
+                    FontFamily = new FontFamily("Segoe UI")
+                };
+                
+                Canvas.SetLeft(yLabel, 15);
+                Canvas.SetTop(yLabel, yPosition - 8);
+                monthlyChart.Children.Add(yLabel);
+            }
+
+            // Calculate and display average line
+            if (maxCount > 0)
+            {
+                double average = monthlyData.Average(x => x.Count);
+                double averageHeight = (average / maxCount) * maxBarHeight;
+                
+                var averageLine = new Line
+                {
+                    X1 = 60,
+                    Y1 = chartHeight - 70 - averageHeight,
+                    X2 = chartWidth - 20,
+                    Y2 = chartHeight - 70 - averageHeight,
+                    Stroke = new SolidColorBrush(Color.FromRgb(255, 193, 7)),
+                    StrokeThickness = 1.5,
+                    StrokeDashArray = new DoubleCollection { 5, 3 }
+                };
+                monthlyChart.Children.Add(averageLine);
+
+                // Average label
+                var averageLabel = new TextBlock
+                {
+                    Text = $"Avg: {average:F1}",
+                    FontSize = 8,
+                    Foreground = new SolidColorBrush(Color.FromRgb(255, 193, 7)),
+                    FontWeight = FontWeights.SemiBold
+                };
+                Canvas.SetLeft(averageLabel, chartWidth - 70);
+                Canvas.SetTop(averageLabel, chartHeight - 70 - averageHeight - 15);
+                monthlyChart.Children.Add(averageLabel);
+            }
+
+            // Draw modern columns with effects
             for (int i = 0; i < monthlyData.Count; i++)
             {
                 var data = monthlyData[i];
-                double barHeight = (data.Count / maxCount) * maxHeight;
+                double barHeight = maxCount > 0 ? (data.Count / maxCount) * maxBarHeight : 0;
+                double xPosition = 70 + (i * barWidth);
                 
-                var bar = new Rectangle
+                // Create modern column with gradient and glow
+                var column = new Rectangle
                 {
-                    Width = barWidth - 10,
+                    Width = barWidth - 6,
                     Height = barHeight,
-                    Fill = new SolidColorBrush(Colors.Blue),
-                    Margin = new Thickness(5, maxHeight - barHeight, 5, 0)
+                    Fill = new LinearGradientBrush
+                    {
+                        StartPoint = new Point(0, 0),
+                        EndPoint = new Point(0, 1),
+                        GradientStops = new GradientStopCollection
+                        {
+                            new GradientStop(Color.FromRgb(0, 255, 255), 0),
+                            new GradientStop(Color.FromRgb(0, 180, 255), 0.3),
+                            new GradientStop(Color.FromRgb(0, 120, 255), 0.7),
+                            new GradientStop(Color.FromRgb(0, 80, 200), 1)
+                        }
+                    },
+                    Stroke = new SolidColorBrush(Color.FromRgb(0, 255, 255)),
+                    StrokeThickness = 1,
+                    RadiusX = 4,
+                    RadiusY = 4
                 };
                 
-                Canvas.SetLeft(bar, i * barWidth);
-                Canvas.SetTop(bar, 0);
+                Canvas.SetLeft(column, xPosition);
+                Canvas.SetTop(column, chartHeight - 70 - barHeight);
+                monthlyChart.Children.Add(column);
                 
-                monthlyChart.Children.Add(bar);
+                // Add shadow effect
+                var shadow = new Rectangle
+                {
+                    Width = barWidth - 6,
+                    Height = 3,
+                    Fill = new SolidColorBrush(Color.FromArgb(50, 0, 0, 0)),
+                    RadiusX = 2,
+                    RadiusY = 2
+                };
+                Canvas.SetLeft(shadow, xPosition);
+                Canvas.SetTop(shadow, chartHeight - 67);
+                monthlyChart.Children.Add(shadow);
                 
-                // Add month label
-                var label = new TextBlock
+                // Add value label with glow effect
+                if (data.Count > 0)
+                {
+                    var valueLabel = new TextBlock
+                    {
+                        Text = data.Count.ToString(),
+                        FontSize = 10,
+                        FontWeight = FontWeights.Bold,
+                        Foreground = new SolidColorBrush(Color.FromRgb(255, 255, 255)),
+                        HorizontalAlignment = HorizontalAlignment.Center,
+                        FontFamily = new FontFamily("Segoe UI")
+                    };
+                    
+                    Canvas.SetLeft(valueLabel, xPosition);
+                    Canvas.SetTop(valueLabel, chartHeight - 70 - barHeight - 18);
+                    monthlyChart.Children.Add(valueLabel);
+                }
+                
+                // Add month label with modern styling
+                var monthLabel = new TextBlock
                 {
                     Text = GetMonthName(data.Month),
-                    FontSize = 10,
-                    HorizontalAlignment = HorizontalAlignment.Center
+                    FontSize = 9,
+                    FontWeight = FontWeights.SemiBold,
+                    Foreground = new SolidColorBrush(Color.FromRgb(180, 180, 180)),
+                    HorizontalAlignment = HorizontalAlignment.Center,
+                    FontFamily = new FontFamily("Segoe UI")
                 };
                 
-                Canvas.SetLeft(label, i * barWidth);
-                Canvas.SetTop(label, maxHeight + 5);
-                
-                monthlyChart.Children.Add(label);
+                Canvas.SetLeft(monthLabel, xPosition);
+                Canvas.SetTop(monthLabel, chartHeight - 50);
+                monthlyChart.Children.Add(monthLabel);
             }
+
+            // Add chart title with modern styling
+            var title = new TextBlock
+            {
+                Text = "MONTHLY BOOKING TREND",
+                FontSize = 12,
+                FontWeight = FontWeights.Bold,
+                Foreground = new SolidColorBrush(Color.FromRgb(0, 255, 255)),
+                HorizontalAlignment = HorizontalAlignment.Center,
+                FontFamily = new FontFamily("Segoe UI")
+            };
+            Canvas.SetLeft(title, 20);
+            Canvas.SetTop(title, 8);
+            monthlyChart.Children.Add(title);
+
+            // Add subtitle
+            var subtitle = new TextBlock
+            {
+                Text = $"Total: {bookings.Count} bookings",
+                FontSize = 9,
+                Foreground = new SolidColorBrush(Color.FromRgb(150, 150, 150)),
+                HorizontalAlignment = HorizontalAlignment.Center,
+                FontFamily = new FontFamily("Segoe UI")
+            };
+            Canvas.SetLeft(subtitle, 20);
+            Canvas.SetTop(subtitle, 25);
+            monthlyChart.Children.Add(subtitle);
         }
 
         private void LoadCustomerFeedback()

@@ -18,3 +18,4 @@ D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\Services\obj\Debug\net8.0\Services
 D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\Services\obj\Debug\net8.0\refint\Services.dll
 D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\Services\obj\Debug\net8.0\Services.pdb
 D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\Services\obj\Debug\net8.0\ref\Services.dll
+D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\Services\obj\Debug\net8.0\Services.sourcelink.json

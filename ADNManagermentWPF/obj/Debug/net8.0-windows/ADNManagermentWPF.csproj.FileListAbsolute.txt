@@ -103,3 +103,4 @@ D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\ADNManagermentWPF\obj\Debug\net8.0
 D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\ADNManagermentWPF\obj\Debug\net8.0-windows\ADNManagermentWPF.pdb
 D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\ADNManagermentWPF\obj\Debug\net8.0-windows\ADNManagermentWPF.genruntimeconfig.cache
 D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\ADNManagermentWPF\obj\Debug\net8.0-windows\ref\ADNManagermentWPF.dll
+D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\ADNManagermentWPF\obj\Debug\net8.0-windows\ADNManagermentWPF.sourcelink.json

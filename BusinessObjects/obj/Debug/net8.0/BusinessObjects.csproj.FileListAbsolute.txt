@@ -13,3 +13,4 @@ D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\BusinessObjects\obj\Debug\net8.0\r
 D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\BusinessObjects\obj\Debug\net8.0\BusinessObjects.pdb
 D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\BusinessObjects\obj\Debug\net8.0\BusinessObjects.genruntimeconfig.cache
 D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\BusinessObjects\obj\Debug\net8.0\ref\BusinessObjects.dll
+D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\BusinessObjects\obj\Debug\net8.0\BusinessObjects.sourcelink.json

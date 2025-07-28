@@ -16,3 +16,4 @@ D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\Repositories\obj\Debug\net8.0\Repo
 D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\Repositories\obj\Debug\net8.0\refint\Repositories.dll
 D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\Repositories\obj\Debug\net8.0\Repositories.pdb
 D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\Repositories\obj\Debug\net8.0\ref\Repositories.dll
+D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\Repositories\obj\Debug\net8.0\Repositories.sourcelink.json

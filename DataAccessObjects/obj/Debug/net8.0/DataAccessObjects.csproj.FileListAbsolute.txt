@@ -14,3 +14,4 @@ D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\DataAccessObjects\obj\Debug\net8.0
 D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\DataAccessObjects\obj\Debug\net8.0\refint\DataAccessObjects.dll
 D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\DataAccessObjects\obj\Debug\net8.0\DataAccessObjects.pdb
 D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\DataAccessObjects\obj\Debug\net8.0\ref\DataAccessObjects.dll
+D:\FPTU\SUMMER25\PRN212\ADNManagerMent_SE1855\DataAccessObjects\obj\Debug\net8.0\DataAccessObjects.sourcelink.json
